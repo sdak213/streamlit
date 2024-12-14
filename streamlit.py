@@ -5,9 +5,9 @@ dbConn = pymysql.connect(user='root', passwd='cksdyd123', host='localhost', db='
 cursor = dbConn.cursor(pymysql.cursors.DictCursor)
 name = st.text_input("고객명")
 if name is not None:
-sql = "select c.name, b.bookname, o.orderdate, o.saleprice from Customer c, Book b, Orders o \
-where c.custid = o.custid and o.bookid = b.bookid and name = '" + name + "';"
-cursor.execute(sql)
-result = cursor.fetchall()
-result = pd.DataFrame(result)
-st.write(result)
+  sql = "select c.name, b.bookname, o.orderdate, o.saleprice from Customer c, Book b, Orders o \
+  where c.custid = o.custid and o.bookid = b.bookid and name = '" + name + "';"
+  cursor.execute(sql)
+  result = cursor.fetchall()
+  result = pd.DataFrame(result)
+  st.write(result)
